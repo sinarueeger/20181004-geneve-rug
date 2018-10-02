@@ -1,0 +1,50 @@
+/*  background-image: url(https://farm5.staticflickr.com/4504/24161677618_1d3332f35c_k_d.jpg);*/
+@import url(https://fonts.googleapis.com/css?family=Arvo);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import url(https://fonts.googleapis.com/css?family=OpenSans);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+/* link color */
+a, a > code {
+  color: #0570b0; /*default: rgb(249, 38, 114); || sets color of links */
+  text-decoration: none; /* turns off background coloring of links */
+}
+
+body {
+  font-family: 'Arvo', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  font-size: 20%;
+}
+
+.big { font-size: 730% }
+.large { font-size: 130% }
+.small { font-size: 70% }
+.tiny { font-size: 40% }
+
+
+.title-slide {
+  background-image: url(https://farm2.staticflickr.com/1860/44684552322_9b356d08ca_b.jpg);
+  /* background-image: url(https://farm2.staticflickr.com/1889/30677415158_48fe54b59c_b.jpg); hang*/
+  /* background-image: url(https://farm2.staticflickr.com/1865/43825402705_a2e5c7725f_b.jpg); hochebene*/
+  /* background-image: url(https://farm2.staticflickr.com/1896/44684552192_0cac080055_b.jpg); stein*/
+  background-size: cover;
+}
+
+.title-slide h1, .title-slide h2, .title-slide h3 {
+  color: #ffffff;
+}
+
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+
+/* link color 
+
+h1, h2, h3 {
+  font-family: 'Karla', 'Yanone Kaffeesatz', Helvetica;
+  font-weight: normal;
+  font-style: italic;
+}
+*/ 

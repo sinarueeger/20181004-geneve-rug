@@ -1,0 +1,185 @@
+---
+title: "Tidying"
+subtitle: ""
+author: "Sina Rüeger"
+date: "2018-10-04"
+output:
+  xaringan::moon_reader:
+    css: ["default-fonts", "default", "my-theme.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      highlightStyle: github
+      highlightLines: true
+      titleSlideClass: [top, right]
+      
+---
+
+<!-- updated: sys.date())
+<!-- From here: https://slides.yihui.name/xaringan/ -->
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library <- function(...) suppressPackageStartupMessages(base::library(...))
+knitr::opts_chunk$set(
+  tidy = TRUE
+)
+```
+
+---
+layout: true
+
+
+---
+class: left, middle
+
+# About me
+
+- Background in Data Analysis & Engineering
+
+- PostDoc @ EPFL `r icon::ii_arrow_right_a()` Analysis of genetic data in infectious diseases at [Fellay Lab](https://fellay-lab.epfl.ch/).
+
+- `r icon::fa_r_project(colour = "#88398a")`-Ladies Lausanne co-organiser
+
+
+--
+
+- `r icon::ii_heart()` Data analysis & Genetic data & Data visualisation
+
+- `r icon::fa_question()` folder structure & `usethis` package
+
+---
+class: center, middle, inverse
+
+# What is my daily work?
+
+---
+class: left, middle
+
+# R ...
+
+
+---
+class: center, middle, inverse
+
+# What are the challenges?
+
+
+---
+class: center, middle, inverse
+
+# What is out there?
+
+---
+class: center, middle, inverse
+
+# Wild west
+
+---
+class: center, middle, inverse
+
+# Wild west (but fancy)
+
+---
+class: left, middle
+
++ Reatme file
+
+---
+class: center, middle, inverse
+
+# `make`
+
+---
+class: center, middle, inverse
+
+# Drake
+
+
+---
+<!---------
+## Data journalism
+
+<a href="https://www.srf.ch/static/srf-data/data/2018/federer/#/en">
+<img border="0" alt="SRF" src="img/datajournalism.png" width="800">
+</a>
+
+
+[Source: SRF](https://www.srf.ch/static/srf-data/data/2018/federer/#/en)
+----->
+
+---
+class: left, middle
+
+# Diversity initiatives in R
+
+- R Forwards
+
+- R-Ladies
+
+---
+class: left, middle
+
+# `r icon::fa_r_project(colour = "#88398a")`-Ladies
+
+<img src="https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/hex-logo-with-text.png" width="200">
+
+PICTURE
+
+- **Global** organisation.
+
+- **Mission**: *To increase gender diversity in the R community* by encouraging, inspiring, and empowering underrepresented minorities.
+
+- Founded in 2012 by [**Gabriela de Queiroz**](https://rladies.org/united-states-rladies/name/gabriela-de-queiroz/).
+
+- Currently **125 R-Ladies meetup groups** in 40 countries.
+
+---
+class: center, middle
+
+<img src="https://raw.githubusercontent.com/rladies/Map-RLadies-Growing/master/rladies_growth.gif">
+
+.footnote[[Source code](https://github.com/rladies/Map-RLadies-Growing) by [Daniela Vázquez](https://twitter.com/d4tagirl).]
+
+
+---
+class: left, middle
+
+- Find other **chapters**: https://gqueiroz.shinyapps.io/rshinylady/
+
+- [meetupr package](https://github.com/rladies/meetupr)
+
+- Interview with [Gabriela de Queiroz](https://www.superdatascience.com/r-ladies-organization/)
+
+
+---
+class: left, middle
+
+- Come to **R-Ladies Lausanne**: https://www.meetup.com/rladies-lausanne/
+
+---
+class: left, middle
+
+
+<img src="https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/hex-logo-with-text.png" width="300">
+
+- Find out more about **R-Ladies**: https://rladies.org/
+
+- Find other **chapters**: https://gqueiroz.shinyapps.io/rshinylady/
+
+- Find **speakers**: https://rladies.org/directory/
+
+
+
+
+---
+class: inverse, center, middle
+
+# Thank you!
+
+Slides: [https://sinarueeger.github.io/20181004-geneve-rug/slides#1](https://sinarueeger.github.io/20181004-geneve-rug/slides#1)
+
+Source code: [https://github.com/sinarueeger/20181004-geneve-rug/](https://github.com/sinarueeger/20181004-geneve-rug/)
+
+
+`r icon::fa_twitter(colour = "white")`: [@sinarueeger](https://twitter.com/sinarueeger)
