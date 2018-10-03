@@ -1,5 +1,5 @@
 ---
-title: "Tidying"
+title: "Tidy workflows"
 subtitle: ""
 author: "Sina Rüeger"
 date: "2018-10-04"
@@ -51,19 +51,38 @@ class: left, middle
 ---
 class: center, middle, inverse
 
-# What is my daily work?
+# What is my everyday work?
+
 
 ---
 class: left, middle
 
-# R ...
 
+<img border="0" alt="" src="img/dailyworkflow/dailyworkflow.001.png" width="800">
+
+.small[Adapted from Figure in [R4DS book](http://r4ds.had.co.nz/explore-intro.html)]
+
+---
+class: left, middle
+
+
+<img border="0" alt="" src="img/dailyworkflow/dailyworkflow.002.png" width="800">
+
+.small[Adapted from Figure in [R4DS book](http://r4ds.had.co.nz/explore-intro.html)]
 
 ---
 class: center, middle, inverse
 
 # What are the challenges?
 
+---
+class: center, middle
+
+<a href="https://docs.google.com/presentation/d/1VK1hngMZSY3FT2SrDd4_AHiB28CHrsuSsaFr7r3SAL8/edit#slide=id.p">
+<img border="0" alt="" src="img/heidibaya.png" width="800">
+</a>
+
+.small[Extract from presentation by Heidi Seibold @HeidiBaya on [*Tools for reproducibility in Statistics and Machine Learning*](https://docs.google.com/presentation/d/1VK1hngMZSY3FT2SrDd4_AHiB28CHrsuSsaFr7r3SAL8/edit#slide=id.p)]
 
 ---
 class: center, middle, inverse
