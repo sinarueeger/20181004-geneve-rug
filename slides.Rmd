@@ -71,9 +71,35 @@ class: left, middle
 .small[Adapted from Figure in [R4DS book](http://r4ds.had.co.nz/explore-intro.html)]
 
 ---
-class: center, middle, inverse
+class: center, middle
 
 # What are the challenges?
+
+- Making it easy for other colleagues to rerun my code (replicability of results!)
+- Publishing code - making it easy for others to rerun with their data or to understand what we die (reproducibility of results!)
+- Data comes in drops, will change over time, formats might change
+- Iterating steps (cleaning, modelling, visualisation, reports)
+- different places to compute things
+- redundant code 
+
+---
+class: center, middle
+
+# What we need
+
+- enforcing tidyness in folders
+- enforcing replicability (which will automatically lead to reproducibility)
+- making things modular 
+- minimising redundant computation
+
+
+---
+class: center, middle
+
+# Package folder structure
+
+given
+
 
 ---
 class: center, middle
@@ -90,27 +116,36 @@ class: center, middle, inverse
 # What is out there?
 
 ---
-class: center, middle, inverse
+class: left, top
 
 # Wild west
 
 ---
-class: center, middle, inverse
+class: left, top
 
-# Wild west (but fancy)
-
----
-class: left, middle
-
-+ Reatme file
+# Wild west "pro"
 
 ---
-class: center, middle, inverse
+class: left, top
+
+adding a README file
+
+---
+class: left, top
 
 # `make`
 
+
 ---
-class: center, middle, inverse
+class: left, top
+
+# other versions of make
+- stu
+
+Problem: other people need to learn this. so it need to be something intuitive. 
+
+---
+class: left, top
 
 # Drake
 
@@ -153,6 +188,10 @@ PICTURE
 
 - Currently **125 R-Ladies meetup groups** in 40 countries.
 
+- Find out more about **R-Ladies**: https://rladies.org/
+
+.footnote[Recommended: listen to interview with [Gabriela de Queiroz](https://www.superdatascience.com/r-ladies-organization/)]
+
 ---
 class: center, middle
 
@@ -164,30 +203,52 @@ class: center, middle
 ---
 class: left, middle
 
-- Find other **chapters**: https://gqueiroz.shinyapps.io/rshinylady/
+## Find other **chapters**: https://gqueiroz.shinyapps.io/rshinylady/
 
-- [meetupr package](https://github.com/rladies/meetupr)
-
-- Interview with [Gabriela de Queiroz](https://www.superdatascience.com/r-ladies-organization/)
-
+<img src="img/shinyapp.png">
 
 ---
 class: left, middle
 
-- Come to **R-Ladies Lausanne**: https://www.meetup.com/rladies-lausanne/
+## Collaborations within R-Ladies: [meetupr package](https://github.com/rladies/meetupr)
+
+<img src="img/meetupr.png">
 
 ---
 class: left, middle
 
+## Find speakers: [directory](https://rladies.org/directory/)
 
-<img src="https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/hex-logo-with-text.png" width="300">
+you can also add yourself!
 
-- Find out more about **R-Ladies**: https://rladies.org/
+<img src="img/rladiesdirectory.png">
 
-- Find other **chapters**: https://gqueiroz.shinyapps.io/rshinylady/
+---
+class: left, middle
 
-- Find **speakers**: https://rladies.org/directory/
+## [Community Slack](https://rladies-community-slack.herokuapp.com/)
 
+- for people that identify as a woman or gender minority 
+- CoC
+
+Sign up here https://rladies-community-slack.herokuapp.com/
+
+<img src="img/communityslack.png">
+
+---
+class: left, middle
+
+## Join us in Lausanne
+
+**R-Ladies Lausanne**: https://www.meetup.com/rladies-lausanne/
+
+```
+library(dplyr)
+rladies_global
+  %>% filter(city==“Lausanne”)
+```
+
+<img src="img/rladieslausanne.png">
 
 
 
