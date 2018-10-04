@@ -23,10 +23,8 @@ body {
 
 
 .title-slide {
-  background-image: url(https://farm2.staticflickr.com/1860/44684552322_9b356d08ca_b.jpg);
-  /* background-image: url(https://farm2.staticflickr.com/1889/30677415158_48fe54b59c_b.jpg); hang*/
-  /* background-image: url(https://farm2.staticflickr.com/1865/43825402705_a2e5c7725f_b.jpg); hochebene*/
-  /* background-image: url(https://farm2.staticflickr.com/1896/44684552192_0cac080055_b.jpg); stein*/
+  background-color: #1a1a1a;
+/*---- background-image: url(img/DSC02269.png);*/
   background-size: cover;
 }
 
