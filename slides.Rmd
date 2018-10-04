@@ -506,6 +506,7 @@ class: inverse, center, middle
 
 .big[<font face="Yanone Kaffeesatz"> Thank you! </font>] <!------`r icon::fa_smile()` ---------->
 
+.left[
 Slides: [https://sinarueeger.github.io/20181004-geneve-rug/slides#1](https://sinarueeger.github.io/20181004-geneve-rug/slides#1)
 
 Source code: [https://github.com/sinarueeger/20181004-geneve-rug/](https://github.com/sinarueeger/20181004-geneve-rug/)
@@ -513,3 +514,4 @@ Source code: [https://github.com/sinarueeger/20181004-geneve-rug/](https://githu
 Examples: [https://github.com/sinarueeger/workflow-example](https://github.com/sinarueeger/workflow-example)
 
 `r icon::fa_twitter(colour = "white")`: [@sinarueeger](https://twitter.com/sinarueeger)
+]
