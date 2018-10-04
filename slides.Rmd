@@ -156,7 +156,9 @@ class: left, middle
 
 # R package folder structure
 
-<img src="http://r-pkgs.had.co.nz/diagrams/package-files.png">
+<a href="http://r-pkgs.had.co.nz/package.html">
+<img border="0" alt="" src="img/package-files.png" width="500">
+</a>
 
 .small[Figure from http://r-pkgs.had.co.nz/package.html.]
 
