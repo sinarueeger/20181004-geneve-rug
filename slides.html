@@ -150,7 +150,7 @@ class: left, middle
 
 - **Modular code** → using **functions** instead of free floating code.
 
-- **Minimising** redundant computation → **caching** the code.
+- **Minimising** redundant computation → **caching** results.
 
 
 ---
@@ -185,14 +185,16 @@ class: left, top
 
 ```
 wild-west/
-├── A_dataprep.R
-├── B_fit.R
+├── code
+│   ├── A_dataprep.R
+│   ├── B_fit.R
+│   └── functions.R
 ├── data
 │   ├── genotyping_data_subset_train.bim
 │   ├── genotyping_data_subset_train.raw
 │   └── training_set_details.txt
-├── functions.R
-├── report.Rmd
+├── report
+│   └── report.Rmd
 └── wild-west.Rproj
 ```
 
@@ -202,23 +204,22 @@ class: left, top
 
 # Wild west "pro"
 
-### Link to example
-
-[https://github.com/sinarueeger/workflow-example/tree/master/wild-west-pro](https://github.com/sinarueeger/workflow-example/tree/master/wild-west-pro)
-
 ### Folder structure
 
 ```
 wild-west-pro/
-├── A_dataprep.R
-├── B_fit.R
 ├── README.md
+├── code
+│   ├── A_dataprep.R
+│   ├── B_fit.R
+│   └── functions.R
 ├── data
 │   ├── genotyping_data_subset_train.bim
 │   ├── genotyping_data_subset_train.raw
 │   └── training_set_details.txt
-.
-.
+├── report
+│   └── report.Rmd
+└── wild-west-pro.Rproj
 ```
 
 --
@@ -259,6 +260,11 @@ class: left, top
 
 
 ---
+class: left, middle
+
+## `cd mini/` 
+
+---
 class: left, top
 
 ## Mini example to get familiar with drake (part 1)
@@ -296,6 +302,11 @@ vis_drake_graph(config)
 1. Use functions `readd()` and `loadd()` to work with the produced output.
 
 ---
+class: left, middle
+
+## `cd drake-land/` 
+
+---
 class: left, top
 
 ## Example with our data
@@ -323,7 +334,13 @@ drake-land/
 ---
 class: left, top
 
-## More complex examples (*work-in-progress*)
+## More complex example
+
+What if you have folders, instead of a *flat* folder structure?
+
+### Link to example (*work-in-progress*)
+
+[https://github.com/sinarueeger/workflow-example/tree/master/drake-land-adv](https://github.com/sinarueeger/workflow-example/tree/master/drake-land-adv)
 
 
 ```
@@ -334,12 +351,11 @@ drake-land-adv/
 │   └── training_set_details.txt
 ├── src
 │   ├── functions.R
-│   ├── genotyping_data_subset_train.raw
-│   └── training_set_details.txt
-├── drake-land.Rproj
-├── 
-├── make.R
-└── report.Rmd
+│   ├── some-other-stuff.R
+├── report
+│   ├── drake-land-adv.Rproj
+│   ├── make.R
+│   ├── report.Rmd
 ```
 
 &lt;!---
@@ -351,6 +367,11 @@ cat(
 )
 -----&gt;
 
+
+---
+class: left, middle
+
+## .drake/
 
 
 ---
@@ -408,7 +429,7 @@ For example:
 
 &gt;  In 2016, 11.4% of package maintainers were women.
 
-&gt;  2016 saw a rise in the proportion of female attendees from 19% to 28%. 
+&gt;  2016 saw a rise in the proportion of female attendees from 19% to 28% at useR.
 
 - Organisation of workshops, e.g. package development: https://forwards.github.io/edu/
 
@@ -477,7 +498,7 @@ class: left, middle
 ---
 class: left, middle
 
-## Community Slack
+## Community Slack <i class="fab  fa-slack "></i>
 
 - have a safe and global space
 - to discuss within public channels \#rstats news, packages, community ideas
