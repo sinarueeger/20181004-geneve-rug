@@ -467,12 +467,13 @@ class: left, middle
 
 ---
 class: left, middle
--## [@WeAreRLadies](https://twitter.com/WeAreRLadies): The R-Ladies RoCur
+
+## [@WeAreRLadies](https://twitter.com/WeAreRLadies): The R-Ladies RoCur
 
 <img src="img/rocur.png">
 
---c
-lass: left, middle
+---
+class: left, middle
 
 ## Community Slack
 
@@ -480,21 +481,27 @@ lass: left, middle
 - to discuss within public channels \#rstats news, packages, community ideas
 - include R-Ladies members around the world
 
+.pull-left[
 ### Who can sign-up?
 
 People that...
 - identify as a woman or gender minority 
 - that have read and agreed to the CoC
 
-Sign up here: bit.ly/rladies-slack
+Sign up here: [bit.ly/rladies-slack](bit.ly/rladies-slack)
 
+]
+
+.pull-right[
 <img src="img/communityslack.png" width="600">
+
+]
 
 ---
 class: left, middle
 
-## Join us in Lausanne
-!
+## Join us in Lausanne!
+
 **R-Ladies Lausanne** `r icon::fa_meetup()`: https://www.meetup.com/rladies-lausanne/
 
 ```
