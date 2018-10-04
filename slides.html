@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tidying workflows   R community</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sina Rüeger" />
+    <meta name="date" content="2018-10-04" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: top, right, title-slide
+
+# Tidying workflows <br /> R community
+## Download example scripts here: <a href="https://github.com/sinarueeger/workflow-example/">http://bit.ly/2O15oom</a>
+### Sina Rüeger
+### 2018-10-04
+
+---
+
+
+&lt;!-- updated: sys.date())
+&lt;!-- From here: https://slides.yihui.name/xaringan/ --&gt;
+
+
+
+---
+layout: true
+
+
+---
+class: left, middle
+
+# About me
+
+- Background in Data Analysis &amp; Engineering
+
+- PostDoc @ EPFL <i class="ion  ion-arrow-right-a "></i> Analysis of genetic data in infectious diseases at the [Fellay Lab](https://fellay-lab.epfl.ch/).
+
+- <i class="fab  fa-r-project " style="color:#88398a;"></i>-Ladies Lausanne co-organiser
+
+
+--
+
+- <i class="ion  ion-heart "></i> Data analysis &amp; Genetic data &amp; Data visualisation
+
+- <i class="fas  fa-question "></i> `usethis` package
+
+---
+class: center, middle, inverse
+
+# My everyday work
+
+
+---
+class: left, middle
+
+
+&lt;img border="0" alt="" src="img/dailyworkflow/dailyworkflow.001.png" width="800"&gt;
+
+.small[Adapted from Figure in [R4DS book](http://r4ds.had.co.nz/explore-intro.html)]
+
+---
+class: left, middle
+
+
+&lt;img border="0" alt="" src="img/dailyworkflow/dailyworkflow.002.png" width="800"&gt;
+
+.small[Adapted from Figure in [R4DS book](http://r4ds.had.co.nz/explore-intro.html)]
+
+---
+class: left, middle
+
+
+&lt;img border="0" alt="" src="img/dailyworkflow/dailyworkflow.003.png" width="800"&gt;
+
+.small[Adapted from Figure in [R4DS book](http://r4ds.had.co.nz/explore-intro.html)]
+
+---
+class: inverse, center, middle
+
+.big[&lt;font face="Yanone Kaffeesatz"&gt; Tidying workflows &lt;/font&gt;] &lt;!------<i class="fas  fa-smile "></i> ----------&gt;
+
+---
+class: left, top
+
+# The challenges
+
+- Making it easy for other colleagues to **rerun** (and **understand**) my code → *replicability* of results.
+
+--
+
+- Publishing code - making it easy for others to **rerun with their data** and to **understand** my code → *reproducibility* of results.
+
+--
+
+- Keeping up with **new data deliveries**, changing data formats, generally, data chaos. 
+
+--
+
+- Having an **overview of the analysis and its iteration steps** → cleaning, modelling, visualisation, reports.
+
+--
+
+- Separating `data`, `processed-data` and `output-data`
+
+--
+
+- Having **different places** for computation (PC, Server1, Server2).
+
+--
+
+- Using similar code in many different R scripts → **redundant** code 
+
+---
+class: center, middle
+
+&lt;img border="0" alt="" src="https://imgs.xkcd.com/comics/data_pipeline.png" width="800"&gt;
+
+
+---
+class: center, middle
+
+# There is no magic solution
+
+&lt;a href="https://docs.google.com/presentation/d/1VK1hngMZSY3FT2SrDd4_AHiB28CHrsuSsaFr7r3SAL8/edit#slide=id.p"&gt;
+&lt;img border="0" alt="" src="img/heidibaya.png" width="800"&gt;
+&lt;/a&gt;
+
+.small[Extract from presentation by Heidi Seibold @HeidiBaya on [*Tools for reproducibility in Statistics and Machine Learning*](https://docs.google.com/presentation/d/1VK1hngMZSY3FT2SrDd4_AHiB28CHrsuSsaFr7r3SAL8/edit#slide=id.p)]
+
+
+
+
+---
+class: left, middle
+
+# What we need
+
+- **Tidy folders**
+  - clear folder structure, e.g. `data`, `bin`, `code`, but not `data1`, `data2`, `code_old`
+  - only files with "purposes" (no `B_mod_old.R`)
+
+- **Clear instructions** → one file should contain a sort of **recipe** of the analysis.
+
+- **Modular code** → using **functions** instead of free floating code.
+
+- **Minimising** redundant computation → **caching** the code.
+
+
+---
+class: left, middle
+
+# R package folder structure
+
+&lt;a href="http://r-pkgs.had.co.nz/package.html"&gt;
+&lt;img border="0" alt="" src="http://r-pkgs.had.co.nz/diagrams/package-files.png
+" width="500"&gt;
+&lt;/a&gt;
+
+.small[Figure from http://r-pkgs.had.co.nz/package.html.]
+
+---
+class: center, middle, inverse
+
+# What are the options?
+
+
+---
+class: left, top
+
+# The default aka. wild west
+
+### Link to example
+
+[https://github.com/sinarueeger/workflow-example/tree/master/wild-west](https://github.com/sinarueeger/workflow-example/tree/master/wild-west)
+
+&lt;!--- &lt;img border="0" alt="" src="img/wildwest.png" width="500"&gt;------&gt;
+
+### Folder structure
+
+```
+wild-west/
+├── A_dataprep.R
+├── B_fit.R
+├── data
+│   ├── genotyping_data_subset_train.bim
+│   ├── genotyping_data_subset_train.raw
+│   └── training_set_details.txt
+├── functions.R
+├── report.Rmd
+└── wild-west.Rproj
+```
+
+
+---
+class: left, top
+
+# Wild west "pro"
+
+### Link to example
+
+[https://github.com/sinarueeger/workflow-example/tree/master/wild-west-pro](https://github.com/sinarueeger/workflow-example/tree/master/wild-west-pro)
+
+### Folder structure
+
+```
+wild-west-pro/
+├── A_dataprep.R
+├── B_fit.R
+├── README.md
+├── data
+│   ├── genotyping_data_subset_train.bim
+│   ├── genotyping_data_subset_train.raw
+│   └── training_set_details.txt
+├── functions.R
+├── report.Rmd
+└── wild-west-pro.Rproj
+```
+
+--
+### + README file
+
+- **Problem**: the `README.md` file needs to be updated.
+
+---
+class: left, top
+
+# make
+
+&lt;img border="0" alt="" src="img/make.png" width="600"&gt;
+
+.small[From https://kbroman.org/minimal_make/]
+
+- Variations of make, e.g. `stu`.
+
+- **Problem**: what if colleagues don't know make?
+
+
+---
+class: left, top
+
+# [Drake](https://github.com/ropensci/drake)
+
+- drake = Data Frames in R for Make
+
+- "general-purpose workflow manager for data-driven tasks"
+  - borrows some features from make
+  - caching of runs (future runs only start from the part where something has changed)
+  - scalable (parallel computing)
+  - supports easy maintainance of data analysis projects
+
+- [rOpenSci](https://ropensci.org/) package → code is reviewed
+
+- Created by [Will Landau](https://twitter.com/wmlandau), with contributions by many others.
+
+
+---
+class: left, top
+
+## Mini example to get familiar with drake (part 1)
+
+1. `install.packages("drake")`
+1. Check-out the different examples with `drake::drake_examples()`.
+1. Run `drake::drake_example("main")` → this will download a folder called `main`.
+1. `cd main/`
+
+```
+main/
+├── COPYRIGHT.md
+├── LICENSE.md
+├── README.md
+├── clean.R
+├── make.R
+├── raw_data.xlsx
+└── report.Rmd
+```
+
+---
+class: left, top
+
+## Mini example to get familiar with drake (part 2)
+
+1. Open `make.R`: key components are `drake_plan()` and `make()`. 
+1. Add the following bit before and after `make(plan)`.
+```
+config &lt;- drake_config(plan) 
+vis_drake_graph(config) 
+```
+1. Run all code for a first time.
+1. Change something (e.g. the plot function).
+1. Rerun and watch the colors change in `vis_drake_graph(config)`.
+1. Use functions `readd()` and `loadd()` to work with the produced output.
+
+---
+class: left, top
+
+## Example with our data
+
+### Link to example
+
+[https://github.com/sinarueeger/workflow-example/tree/master/drake-land](https://github.com/sinarueeger/workflow-example/tree/master/drake-land)
+
+### Folder structure
+
+```
+drake-land/
+├── data
+│   ├── genotyping_data_subset_train.bim
+│   ├── genotyping_data_subset_train.raw
+│   └── training_set_details.txt
+├── drake-land.Rproj
+├── functions.R
+├── make.R
+└── report.Rmd
+```
+
+
+
+---
+class: left, top
+
+## More complex examples (*work-in-progress*)
+
+
+```
+drake-land-adv/
+├── data
+│   ├── genotyping_data_subset_train.bim
+│   ├── genotyping_data_subset_train.raw
+│   └── training_set_details.txt
+├── src
+│   ├── functions.R
+│   ├── genotyping_data_subset_train.raw
+│   └── training_set_details.txt
+├── drake-land.Rproj
+├── 
+├── make.R
+└── report.Rmd
+```
+
+&lt;!---
+cat(
+  system(
+    "tree ../drake-land",
+    intern = TRUE),
+  sep = "\n"
+)
+-----&gt;
+
+
+
+---
+class: left, top
+
+## Resources
+
+- [Github Repo](https://github.com/ropensci/drake)
+
+- [Best practices](https://ropensci.github.io/drake/articles/best-practices.html) for drake projects.
+
+- How drake compares to [similar work](https://github.com/ropensci/drake#similar-work).
+
+- Lots of [tutorials](https://github.com/ropensci/drake#tutorials) and [examples](https://github.com/ropensci/drake#examples).
+
+- Check-out [this tutorial](https://github.com/krlmlr/drake-sib-zurich) by [Kirill Müller](https://twitter.com/krlmlr).
+
+
+---
+class: inverse, center, middle
+
+.big[&lt;font face="Yanone Kaffeesatz"&gt; Diversity in the R community &lt;/font&gt;] &lt;!------<i class="fas  fa-smile "></i> ----------&gt;
+
+
+---
+class: left, middle
+
+# Diversity initiatives in R
+
+
+.pull-left[
+&lt;img src="https://forwards.github.io/images/forwards.svg"&gt;
+
+
+]
+
+.pull-right[
+&lt;img src="https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/hex-logo-with-text.png"&gt;
+
+]
+
+---
+class: left, middle
+
+# [R Forwards](https://forwards.github.io/)
+
+&gt; The task force was set up by the R Foundation in December 2015 to address the underrepresentation of women and rebranded in January 2017 to accommodate more under-represented groups such as LGBT, minority ethnic groups, and people with disabilities in the R community.
+
+## Activities 
+
+For example:
+
+- Monitoring of basic demographic data: https://forwards.github.io/data/.
+
+&gt;  In 2016, 11.4% of package maintainers were women.
+
+&gt;  2016 saw a rise in the proportion of female attendees from 19% to 28%. 
+
+- Organisation of workshops, e.g. package development: https://forwards.github.io/edu/
+
+---
+class: left, middle
+
+.pull-left[# <i class="fab  fa-r-project " style="color:#88398a;"></i>-Ladies]
+
+.pull-right[&lt;img src="https://rladies.org/wp-content/uploads/2018/02/R-Ladies-300x164.png" width="400"&gt;]
+
+
+- **Global** organisation.
+
+- **Mission**: *To increase gender diversity in the R community* by encouraging, inspiring, and empowering underrepresented minorities.
+
+- Founded in 2012 by [**Gabriela de Queiroz**](https://rladies.org/united-states-rladies/name/gabriela-de-queiroz/) ➡ listen to [this interview](https://www.superdatascience.com/r-ladies-organization/) - it is 👍!
+
+- Currently **130 R-Ladies meetup groups** in 43 countries.
+
+- Find out more about **R-Ladies**: https://rladies.org/
+
+
+---
+class: center, middle
+
+## **Growth** of R-Ladies
+
+&lt;img src="https://raw.githubusercontent.com/rladies/Map-RLadies-Growing/master/rladies_growth.gif"&gt;
+
+.footnote[[Source code](https://github.com/rladies/Map-RLadies-Growing) by [Daniela Vázquez](https://twitter.com/d4tagirl).]
+
+
+---
+class: left, middle
+
+## Find **chapters**: https://gqueiroz.shinyapps.io/rshinylady/
+
+&lt;img src="img/shinyapp.png"&gt;
+
+
+
+---
+class: left, middle
+
+## `meetupr` package: https://github.com/rladies/meetupr
+
+&lt;img src="img/meetupr.png"&gt;
+
+---
+class: left, middle
+
+## Find speakers in the R-Ladies directory: https://rladies.org/directory/
+
+<i class="fas  fa-user-plus "></i> you can also add yourself!
+
+&lt;img src="img/rladiesdirectory.png"&gt;
+
+
+---class: left, middle
+
+## Community Slack
+
+- have a safe and global space
+- to discuss within public channels \#rstats news, packages, community ideas
+- include R-Ladies members around the world
+
+### Who can sign-up?
+
+People that...
+- identify as a woman or gender minority 
+- that have read and agreed to the CoC
+
+Sign up here: bit.ly/rladies-slack
+
+&lt;img src="img/communityslack.png" width="600"&gt;
+
+---
+class: left, middle
+
+## Join us in Lausanne
+
+**R-Ladies Lausanne** <i class="fab  fa-meetup "></i>: https://www.meetup.com/rladies-lausanne/
+
+```
+library(dplyr)
+rladies_global
+  %&gt;% filter(city==“Lausanne”)
+```
+
+&lt;img src="img/rladieslausanne.png" width="500"&gt;
+
+
+
+---
+class: inverse, center, middle
+
+.big[&lt;font face="Yanone Kaffeesatz"&gt; Thank you! &lt;/font&gt;] &lt;!------<i class="fas  fa-smile "></i> ----------&gt;
+
+Slides: [http://bit.ly/2PbakUf](https://sinarueeger.github.io/20181004-geneve-rug/slides#1)
+
+Source code: [https://github.com/sinarueeger/20181004-geneve-rug/](https://github.com/sinarueeger/20181004-geneve-rug/)
+
+Examples: [https://github.com/sinarueeger/workflow-example](https://github.com/sinarueeger/workflow-example)
+
+<i class="fab  fa-twitter " style="color:white;"></i>: [@sinarueeger](https://twitter.com/sinarueeger)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
