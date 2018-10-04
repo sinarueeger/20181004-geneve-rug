@@ -215,9 +215,8 @@ wild-west-pro/
 │   ├── genotyping_data_subset_train.bim
 │   ├── genotyping_data_subset_train.raw
 │   └── training_set_details.txt
-├── functions.R
-├── report.Rmd
-└── wild-west-pro.Rproj
+.
+.
 ```
 
 --
@@ -466,7 +465,14 @@ class: left, middle
 <img src="img/rladiesdirectory.png">
 
 
----class: left, middle
+---
+class: left, middle
+-## [@WeAreRLadies](https://twitter.com/WeAreRLadies): The R-Ladies RoCur
+
+<img src="img/rocur.png">
+
+--c
+lass: left, middle
 
 ## Community Slack
 
@@ -488,7 +494,7 @@ Sign up here: bit.ly/rladies-slack
 class: left, middle
 
 ## Join us in Lausanne
-
+!
 **R-Ladies Lausanne** `r icon::fa_meetup()`: https://www.meetup.com/rladies-lausanne/
 
 ```
