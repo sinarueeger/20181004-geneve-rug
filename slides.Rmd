@@ -119,6 +119,7 @@ class: center, middle
 
 <img border="0" alt="" src="https://imgs.xkcd.com/comics/data_pipeline.png" width="800">
 
+.small[Source: https://imgs.xkcd.com/comics/data_pipeline.png]
 
 ---
 class: center, middle
@@ -156,8 +157,7 @@ class: left, middle
 # R package folder structure
 
 <a href="http://r-pkgs.had.co.nz/package.html">
-<img border="0" alt="" src="http://r-pkgs.had.co.nz/diagrams/package-files.png
-" width="500">
+<img border="0" alt="" src="http://r-pkgs.had.co.nz/diagrams/package-files.png" width="500">
 </a>
 
 .small[Figure from http://r-pkgs.had.co.nz/package.html.]
@@ -505,7 +505,7 @@ class: inverse, center, middle
 
 .big[<font face="Yanone Kaffeesatz"> Thank you! </font>] <!------`r icon::fa_smile()` ---------->
 
-Slides: [http://bit.ly/2PbakUf](https://sinarueeger.github.io/20181004-geneve-rug/slides#1)
+Slides: [https://sinarueeger.github.io/20181004-geneve-rug/slides#1](https://sinarueeger.github.io/20181004-geneve-rug/slides#1)
 
 Source code: [https://github.com/sinarueeger/20181004-geneve-rug/](https://github.com/sinarueeger/20181004-geneve-rug/)
 
