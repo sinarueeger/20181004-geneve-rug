@@ -2,7 +2,7 @@
 title: "Tidying workflows <br /> R community"
 subtitle: "Download example scripts here: [http://bit.ly/2O15oom](https://github.com/sinarueeger/workflow-example/)"
 author: "Sina Rüeger"
-date: "2018-10-04"
+date: "2018-10-04 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     css: ["default-fonts", "default", "my-theme.css"]
@@ -15,7 +15,7 @@ output:
       
 ---
 
-<!-- updated: sys.date())
+<!-- 
 <!-- From here: https://slides.yihui.name/xaringan/ -->
 
 ```{r setup, include=FALSE}
@@ -88,11 +88,13 @@ class: left, top
 
 # The challenges
 
-- Making it easy for other colleagues to **rerun** (and **understand**) my code → *repeatability* of results.
+- Making it easy for other colleagues to **rerun** (and **understand**) the project → *"repeatability"*
 
 --
 
-- Publishing code - making it easy for others to **rerun with their data** and to **understand** my code → *reproducibility* of results.
+- Publishing code 
+  - making it easy for others to **rerun** and to **understand** the project → [*"reproducibility"*](https://twitter.com/jtleek/status/759822823552606208)
+  - making it easy for others to rerun the code **with different data** → [*"replicability"*](https://twitter.com/jtleek/status/759822823552606208)
 
 --
 
